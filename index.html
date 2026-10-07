@@ -3,55 +3,328 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>DANA BRAND | Gifts • Events • Details</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f6f2;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(
+        rgba(255,255,255,0.88),
+        rgba(248,246,242,0.95)
+      );
+    }
+
+    .hero {
+      max-width: 800px;
+    }
+
+    .brand {
+      font-size: 55px;
+      letter-spacing: 8px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 15px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #8c7652;
+      margin-bottom: 35px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #666;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 32px;
+      border: 1px solid #8c7652;
+      color: #8c7652;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #8c7652;
+      color: white;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 50px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px 30px;
+      border: 1px solid #e7e1d8;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 23px;
+      font-weight: normal;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .card p {
+      color: #777;
+      font-size: 15px;
+    }
+
+    .about {
+      text-align: center;
+      background: #eeeae3;
+      max-width: none;
+    }
+
+    .about-content {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .instagram {
+      text-align: center;
+    }
+
+    .instagram a {
+      color: #8c7652;
+      text-decoration: none;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #222;
+      color: #ddd;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+
+      .brand {
+        font-size: 38px;
+        letter-spacing: 5px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      .tagline {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <header>
-    <h1>DANA BRAND</h1>
-    <p>Gifts • Events • Details</p>
-  </header>
+    <div class="hero">
 
-  <main>
-    <section>
+      <div class="brand">DANA BRAND</div>
+
+      <div class="tagline">
+        Gifts • Events • Details
+      </div>
+
       <h2>Luxury Details, Beautiful Moments</h2>
+
       <p>
         Thoughtfully designed gifts, elegant event details,
-        invitations and unforgettable touches for every occasion.
+        invitations and unforgettable touches created
+        especially for your special moments.
       </p>
 
-      <button>Explore Our Services</button>
-    </section>
+      <a href="#services" class="button">
+        Explore Our Services
+      </a>
 
-    <section>
-      <h2>Our Services</h2>
+    </div>
+  </header>
 
-      <h3>Luxury Mabakhir</h3>
-      <p>Elegant mabakhir designed to add a luxurious touch to your home and occasions.</p>
 
-      <h3>Event Giveaways</h3>
-      <p>Beautiful توزيعات and مطبقيات designed especially for your special moments.</p>
+  <section id="services">
 
-      <h3>Gift Boxes</h3>
-      <p>Luxury gift boxes carefully designed for every celebration.</p>
+    <h2 class="section-title">Our Services</h2>
 
-      <h3>Event Invitations</h3>
-      <p>Elegant digital invitations for weddings, engagements, birthdays and more.</p>
+    <p class="section-subtitle">
+      Beautiful details designed to make every occasion special.
+    </p>
 
-      <h3>Event Styling</h3>
-      <p>Beautiful event setups and details created to make your occasion memorable.</p>
-    </section>
+    <div class="services">
 
-    <section>
-      <h2>Contact DANA BRAND</h2>
-      <p>Instagram: @DANA BRAND</p>
-      <p>Abu Dhabi, UAE</p>
-    </section>
-  </main>
+      <div class="card">
+        <h3>Luxury Mabakhir</h3>
+        <p>
+          Elegant mabakhir designed to add a luxurious
+          touch to your home and special occasions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Event Giveaways</h3>
+        <p>
+          Beautiful توزيعات and مطبقيات carefully
+          designed for weddings, engagements and celebrations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Luxury Gift Boxes</h3>
+        <p>
+          Thoughtfully designed gift boxes created
+          for birthdays, weddings and every meaningful occasion.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Event Invitations</h3>
+        <p>
+          Elegant digital invitations for weddings,
+          engagements, birthdays, baby showers and more.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Event Styling</h3>
+        <p>
+          Beautiful event setups and refined details
+          created to make your celebration memorable.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Custom Designs</h3>
+        <p>
+          Personalized designs and creative details
+          made especially for your occasion.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="about">
+
+    <div class="about-content">
+
+      <h2 class="section-title">
+        About DANA BRAND
+      </h2>
+
+      <p>
+        DANA BRAND brings together luxury gifts,
+        event details and creative designs under one
+        elegant concept.
+
+        Our goal is to turn simple moments into
+        beautiful memories through thoughtful details
+        and carefully designed touches.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="instagram">
+
+    <h2 class="section-title">
+      Follow DANA BRAND
+    </h2>
+
+    <p class="section-subtitle">
+      Discover our latest designs, products and event details.
+    </p>
+
+    <a
+      href="https://www.instagram.com/dana.brand.uae/"
+      target="_blank"
+    >
+      @dana.brand.uae
+    </a>
+
+  </section>
+
 
   <footer>
-    <p>© 2026 DANA BRAND. All rights reserved.</p>
+
+    © 2026 DANA BRAND — Gifts • Events • Details
+
   </footer>
 
 </body>
