@@ -1,139 +1,276 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="theme-color" content="#f8f6f2">
+  <meta name="description" content="DANA BRAND — Elegant event styling, digital invitations, and personalized details for weddings, birthdays, and special celebrations in Abu Dhabi, UAE.">
+
   <title>DANA BRAND | Events • Invitations • Details</title>
 
   <style>
+    :root {
+      --background: #f8f6f2;
+      --white: #ffffff;
+      --gold: #8c7652;
+      --gold-light: #e7e1d8;
+      --text: #292721;
+      --muted: #77736c;
+      --soft: #eeeae3;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
     body {
       font-family: Georgia, "Times New Roman", serif;
-      background: #f8f6f2;
-      color: #222;
+      background: var(--background);
+      color: var(--text);
       line-height: 1.7;
     }
 
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 246, 242, 0.97);
+      border-bottom: 1px solid var(--gold-light);
+      padding: 15px 20px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+
     header {
-      min-height: 90vh;
+      min-height: 78vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(
-        rgba(255,255,255,0.88),
-        rgba(248,246,242,0.95)
-      );
+      padding: 80px 20px;
+      background:
+        linear-gradient(
+          rgba(255, 255, 255, 0.58),
+          rgba(248, 246, 242, 0.96)
+        );
     }
 
     .hero {
       max-width: 800px;
+      margin: auto;
     }
 
     .brand {
-      font-size: 55px;
+      font-size: clamp(36px, 7vw, 58px);
       letter-spacing: 8px;
       font-weight: normal;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .tagline {
-      font-size: 15px;
-      letter-spacing: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: #8c7652;
+      color: var(--gold);
       margin-bottom: 35px;
     }
 
-    .hero h2 {
-      font-size: 42px;
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 44px);
       font-weight: normal;
+      line-height: 1.3;
       margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 650px;
       margin: auto;
-      color: #666;
+      color: var(--muted);
       font-size: 17px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 35px;
-      padding: 14px 32px;
-      border: 1px solid #8c7652;
-      color: #8c7652;
+      margin-top: 32px;
+      padding: 13px 28px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
       text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
       letter-spacing: 2px;
       transition: 0.3s;
     }
 
     .button:hover {
-      background: #8c7652;
-      color: white;
+      background: var(--gold);
+      color: var(--white);
     }
 
+    /* General Sections */
+
     section {
-      padding: 80px 20px;
+      padding: 75px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: 34px;
+      font-size: clamp(28px, 4vw, 35px);
       font-weight: normal;
-      margin-bottom: 15px;
+      line-height: 1.3;
+      margin-bottom: 14px;
     }
 
     .section-subtitle {
       text-align: center;
-      color: #777;
-      margin-bottom: 50px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto 42px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+    /* Gallery */
+
+    .gallery-category {
+      margin-top: 55px;
     }
 
-    .card {
-      background: white;
-      padding: 35px 30px;
-      border: 1px solid #e7e1d8;
+    .gallery-category:first-of-type {
+      margin-top: 35px;
+    }
+
+    .category-title {
       text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      font-size: 23px;
+      font-size: 24px;
       font-weight: normal;
-      margin-bottom: 12px;
-      color: #333;
+      margin-bottom: 22px;
     }
 
-    .card p {
-      color: #777;
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      background: var(--white);
+      border: 1px solid var(--gold-light);
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item p {
+      padding: 13px 8px;
+      text-align: center;
+      color: var(--gold);
       font-size: 15px;
     }
 
-    .about {
+    /* Services */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 32px 26px;
+      border: 1px solid var(--gold-light);
       text-align: center;
-      background: #eeeae3;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* About */
+
+    .about {
       max-width: none;
+      background: var(--soft);
+      text-align: center;
+      padding: 75px 20px;
     }
 
     .about-content {
@@ -141,48 +278,146 @@
       margin: auto;
     }
 
+    .about-content p {
+      color: #625f58;
+      font-size: 16px;
+    }
+
+    /* Instagram */
+
     .instagram {
       text-align: center;
     }
 
-    .instagram a {
-      color: #8c7652;
-      text-decoration: none;
-      font-size: 20px;
-      letter-spacing: 2px;
+    .instagram p {
+      margin-bottom: 25px;
     }
+
+    .instagram-link {
+      display: inline-block;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 19px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 4px;
+    }
+
+    .instagram-link:hover {
+      color: var(--text);
+    }
+
+    /* Footer */
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      background: #222;
-      color: #ddd;
-      font-size: 13px;
+      padding: 27px 15px;
+      background: #292721;
+      color: #e7e1d8;
+      font-size: 12px;
       letter-spacing: 1px;
     }
 
-    @media (max-width: 700px) {
+    /* Mobile */
 
-      .brand {
-        font-size: 38px;
-        letter-spacing: 5px;
+    @media (max-width: 700px) {
+      .navbar {
+        padding: 13px 12px;
       }
 
-      .hero h2 {
-        font-size: 30px;
+      .nav-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-brand {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+        letter-spacing: 0.3px;
+      }
+
+      header {
+        min-height: 65vh;
+        padding: 65px 20px;
+      }
+
+      .brand {
+        letter-spacing: 5px;
       }
 
       .tagline {
         font-size: 11px;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 55px 16px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item img {
+        height: 170px;
+      }
+
+      .gallery-item p {
+        font-size: 13px;
+        padding: 10px 5px;
+      }
+
+      .category-title {
+        font-size: 21px;
       }
 
       .services {
         grid-template-columns: 1fr;
+        gap: 15px;
       }
 
-      section {
-        padding: 60px 20px;
+      .card {
+        padding: 27px 20px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .gallery-item img {
+        height: 140px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -190,16 +425,36 @@
 
 <body>
 
-  <header>
+  <!-- Navigation -->
+
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <a href="#home" class="nav-brand">DANA BRAND</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero -->
+
+  <header id="home">
     <div class="hero">
 
       <div class="brand">DANA BRAND</div>
 
       <div class="tagline">
-        Events • Invitations • Details
+        Gifts • Events • Details
       </div>
 
-      <h2>Beautiful Moments, Thoughtfully Designed</h2>
+      <h1>Beautiful Moments, Thoughtfully Designed</h1>
 
       <p>
         Elegant event styling, creative invitations and
@@ -208,12 +463,182 @@
       </p>
 
       <a href="#services" class="button">
-        Explore Our Services
+        EXPLORE OUR SERVICES
       </a>
 
     </div>
   </header>
 
+  <!-- Gallery -->
+
+  <section id="gallery">
+
+    <h2 class="section-title">Our Gallery</h2>
+
+    <p class="section-subtitle">
+      A collection of beautiful moments and creative
+      event ideas to inspire your next celebration.
+    </p>
+
+    <!-- Weddings & Engagements -->
+
+    <div class="gallery-category">
+
+      <h3 class="category-title">
+        Weddings &amp; Engagements
+      </h3>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+            alt="Wedding celebration styling"
+            loading="lazy"
+          >
+          <p>Wedding Styling</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1519225421980-888cb5a46c5a?auto=format&fit=crop&w=800&q=80"
+            alt="Elegant wedding table"
+            loading="lazy"
+          >
+          <p>Elegant Details</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+            alt="Wedding celebration moments"
+            loading="lazy"
+          >
+          <p>Special Moments</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Event Styling -->
+
+    <div class="gallery-category">
+
+      <h3 class="category-title">Event Styling</h3>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80"
+            alt="Event table decoration"
+            loading="lazy"
+          >
+          <p>Table Styling</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+            alt="Special event setup"
+            loading="lazy"
+          >
+          <p>Celebration Setup</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+            alt="Event atmosphere"
+            loading="lazy"
+          >
+          <p>Event Atmosphere</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Birthdays & Celebrations -->
+
+    <div class="gallery-category">
+
+      <h3 class="category-title">
+        Birthdays &amp; Celebrations
+      </h3>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
+            alt="Birthday balloons and party decorations"
+            loading="lazy"
+          >
+          <p>Birthday Details</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80"
+            alt="Birthday party decorations"
+            loading="lazy"
+          >
+          <p>Party Styling</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
+            alt="Celebration event decor"
+            loading="lazy"
+          >
+          <p>Beautiful Celebrations</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Digital Invitations -->
+
+    <div class="gallery-category">
+
+      <h3 class="category-title">Digital Invitations</h3>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80"
+            alt="Wedding invitation inspiration"
+            loading="lazy"
+          >
+          <p>Wedding Invitations</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80"
+            alt="Celebration inspiration"
+            loading="lazy"
+          >
+          <p>Birthday Invitations</p>
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+            alt="Elegant event design inspiration"
+            loading="lazy"
+          >
+          <p>Custom Designs</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Services -->
 
   <section id="services">
 
@@ -234,7 +659,7 @@
       </div>
 
       <div class="card">
-        <h3>Wedding & Engagement</h3>
+        <h3>Weddings &amp; Engagements</h3>
         <p>
           Refined styling and creative details for
           weddings, engagements and romantic celebrations.
@@ -242,7 +667,7 @@
       </div>
 
       <div class="card">
-        <h3>Henna & Celebrations</h3>
+        <h3>Henna &amp; Celebrations</h3>
         <p>
           Beautiful concepts and personalized details
           for henna nights and special celebrations.
@@ -250,7 +675,7 @@
       </div>
 
       <div class="card">
-        <h3>Birthdays & Baby Showers</h3>
+        <h3>Birthdays &amp; Baby Showers</h3>
         <p>
           Creative themes and elegant details designed
           especially for memorable celebrations.
@@ -277,18 +702,18 @@
 
   </section>
 
+  <!-- About -->
 
-  <section class="about">
+  <section class="about" id="about">
 
     <div class="about-content">
 
-      <h2 class="section-title">
-        About DANA BRAND
-      </h2>
+      <h2 class="section-title">About DANA BRAND</h2>
 
       <p>
-        DANA BRAND creates elegant event experiences
-        and creative designs for life's special moments.
+        DANA BRAND brings together creative designs,
+        elegant event details and thoughtful touches
+        under one refined concept.
 
         From beautifully designed invitations to event
         styling and personalized details, we bring
@@ -300,32 +725,33 @@
 
   </section>
 
+  <!-- Instagram Contact -->
 
-  <section class="instagram">
+  <section class="instagram" id="contact">
 
-    <h2 class="section-title">
-      Follow DANA BRAND
-    </h2>
+    <h2 class="section-title">Follow DANA BRAND</h2>
 
     <p class="section-subtitle">
       Discover our latest event designs, invitations
-      and creative ideas.
+      and creative ideas on Instagram.
     </p>
 
     <a
+      class="instagram-link"
       href="https://www.instagram.com/dana.brand.uae/"
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit DANA BRAND on Instagram"
     >
       @dana.brand.uae
     </a>
 
   </section>
 
+  <!-- Footer -->
 
   <footer>
-
-    © 2026 DANA BRAND — Events • Invitations • Details
-
+    &copy; 2026 DANA BRAND — Gifts • Events • Details
   </footer>
 
 </body>
